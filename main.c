@@ -19,11 +19,11 @@ int main(){
 
 	do{
 		/* Début du jeu*/
-		if(number > 100){
+		/* Si le nombre est supérieur à 100 ou inférieur à 1 alors la partie prend fin */
+		if((number > 100) || (number < 1)){
 			printf("Le numéros saisi n'est pas valide car supérieur à 100 !\n");
-		} else if (number < 1) {
-			printf("Le numéros saisi n'est pas valide car inférieur à 1 !\n");
-		}
+			exit(0);
+		} 
 		/* Si le numétos et différent le jeu continue */
 		if(number != random_number){
 			if (number < random_number){
@@ -63,6 +63,11 @@ int i = 0;
 int recommencer;
 
 i++;
+
+if((number > 100) || (number < 1)){
+	printf("Le numéros saisi n'est pas valide car supérieur à 100 !\n");
+	exit(0);
+} 
 
 if (i == 9){
 	printf("Dommage, vous avez perdu ! Le numéros à deviner était %d", random_number);
